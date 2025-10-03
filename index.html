@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>💌 Happy 31 Months</title>
+  <style>
+    body {
+      margin:0;
+      font-family: "Georgia", serif;
+      background: linear-gradient(180deg, #fff0f5 0%, #fffaf8 60%);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      overflow:hidden;
+    }
+    .card {
+      max-width:700px;
+      padding:30px;
+      background: rgba(255,255,255,0.8);
+      border-radius:14px;
+      text-align:center;
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+      backdrop-filter: blur(6px);
+    }
+    h1 {
+      color:#e91e63;
+      margin-bottom:15px;
+    }
+    p {
+      font-size:18px;
+      margin:12px 0;
+      line-height:1.5;
+    }
+    .heart-big {
+      font-size:40px;
+      animation: beat 1s infinite;
+      margin-top:15px;
+    }
+    @keyframes beat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    .hearts {
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+      pointer-events:none;
+    }
+    .heart {
+      position:absolute;
+      bottom:-10%;
+      animation: floatUp linear infinite;
+      transform: translateX(-50%);
+      opacity:0.8;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity:0; }
+      10% { opacity:1; }
+      100% { transform: translateY(-120vh); opacity:0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>💌 Happy 31 Months!</h1>
+    <p>Happy 31 months baby! my bulingit baby. 💕</p>
+    <p>Congrats on surviving another month with me,<br>still going strong gihapon nyark 🤣</p>
+    <p><strong>I love you bb ❤️</strong></p>
+    <div class="heart-big">❤️</div>
+  </div>
+
+  <div class="hearts"></div>
+
+  <script>
+    const container = document.querySelector('.hearts');
+    const symbols = ['❤️','💕','💖','💘'];
+    for(let i=0;i<15;i++){
+      let span = document.createElement('div');
+      span.className='heart';
+      span.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+      span.style.left = Math.random()*100 + '%';
+      span.style.fontSize = (Math.random()*20+20) + 'px';
+      span.style.animationDuration = (8+Math.random()*8)+'s';
+      span.style.animationDelay = (-Math.random()*8)+'s';
+      container.appendChild(span);
+    }
+  </script>
+</body>
+</html>
